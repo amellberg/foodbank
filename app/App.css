@@ -1,0 +1,9 @@
+.App {
+   color: rgb(77, 85, 39);
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.1em;
+}
+
+#food {
+    font-weight: bolder;
+}
