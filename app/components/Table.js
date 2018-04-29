@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./Table.css"
 
 const TableRow = ({ foodItem }) => {
    return (
       <tr>
-         <td style={{ width: "10%" }}>{foodItem._id}</td>
-         <td style={{ width: "30%" }}>{foodItem.name}</td>
-         <td style={{ width: "10%" }}>{foodItem.carbs}</td>
-         <td style={{ width: "10%" }}>{foodItem.fat}</td>
-         <td style={{ width: "10%" }}>{foodItem.protein}</td>
-         <td style={{ width: "10%" }}>{foodItem.kcal}</td>
+         <td className="col id">{foodItem._id}</td>
+         <td className="col name">{foodItem.name}</td>
+         <td className="col stat">{foodItem.carbs}</td>
+         <td className="col stat">{foodItem.fat}</td>
+         <td className="col stat">{foodItem.protein}</td>
+         <td className="col stat">{foodItem.kcal}</td>
       </tr>
    );
 };
@@ -19,17 +20,19 @@ const Table = ({ foodItems }) => {
       <TableRow key={foodItem._id} foodItem={foodItem} />
    ));
    return (
-      <table>
-         <thead><tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Carbs</th>
-            <th>Fat</th>
-            <th>Protein</th>
-            <th>Kcal</th>
-         </tr></thead>
-         <tbody>{rows}</tbody>
-      </table>
+      <div className="main-table">
+         <table>
+            <thead><tr>
+               <th className="col id">ID</th>
+               <th className="col name">Name</th>
+               <th className="col stat">Carbs</th>
+               <th className="col stat">Fat</th>
+               <th className="col stat">Protein</th>
+               <th className="col stat">Kcal</th>
+            </tr></thead>
+            <tbody>{rows}</tbody>
+         </table>
+      </div>
    );
 };
 

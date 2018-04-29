@@ -1,0 +1,22 @@
+.main-table {
+   width: 50%;
+   padding: 4px;
+   border-width: 1px;
+   border-style: solid;
+   border-collapse: collapse;
+   border-color: #cdbee9;
+   border-radius: 8px;
+}
+
+.col.id {
+   width: 8%;
+   text-align: right;
+}
+.col.name {
+   width: 30%;
+   text-align: center;
+}
+.col.stat {
+   width: 10%;
+   text-align: right;
+}
