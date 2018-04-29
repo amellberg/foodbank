@@ -2,27 +2,40 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 
-const foodItems = [
-   {
-      name: "Proteinpulver",
-      carbs: 8.4, fat: 3.3, protein: 28.1, kcal: 313
-   },
-   {
-      name: "Mellanmjölk",
-      carbs: 18.3, fat: 2.1, protein: 12.6, kcal: 135
-   },
-];
+const TableRow = ({ foodItem }) => {
+   return (
+      <tr>
+         <td style={{ width: "10%" }}>{foodItem._id}</td>
+         <td style={{ width: "30%" }}>{foodItem.name}</td>
+         <td style={{ width: "10%" }}>{foodItem.carbs}</td>
+         <td style={{ width: "10%" }}>{foodItem.fat}</td>
+         <td style={{ width: "10%" }}>{foodItem.protein}</td>
+         <td style={{ width: "10%" }}>{foodItem.kcal}</td>
+      </tr>
+   );
+};
 
-
+const Table = ({ foodItems }) => {
+   const rows = foodItems.map(foodItem => <TableRow foodItem={foodItem} />);
+   return (
+      <table>
+         <thead><tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Carbs</th>
+            <th>Fat</th>
+            <th>Protein</th>
+            <th>Kcal</th>
+         </tr></thead>
+         <tbody>{rows}</tbody>
+      </table>
+   );
+};
 
 const App = () => {
-   const foods = foodItems.map(food => (
-      <li>{food.name}, kcal: {food.kcal}</li>
-   ));
    return (
-      <div className="App">
-         <ul>{foods}</ul>
-         <button>New</button>
+      <div className="main-table">
+         <Table foodItems={foodItems} />
       </div>
    );
 };

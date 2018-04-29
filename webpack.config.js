@@ -23,7 +23,7 @@ module.exports = {
 
    plugins: [
       new HtmlWebpackPlugin({
-         title: "My React Project"
+         title: "FoodBank"
       }),
    ],
 

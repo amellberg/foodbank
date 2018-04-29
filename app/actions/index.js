@@ -1,0 +1,1 @@
+export const newFoodItem = () => { type: NEW_FOOD_ITEM };
