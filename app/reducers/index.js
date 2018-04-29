@@ -25,6 +25,8 @@ function foodBankReducer(state = initialState, action) {
                }
             ]
          };
+      default:
+         return state;
    }
 };
 
