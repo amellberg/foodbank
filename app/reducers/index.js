@@ -18,13 +18,20 @@ function foodBankReducer(state = initialState, action) {
          return {
             ...state,
             foodItems: [
-               ...foodItems,
+               ...state.foodItems,
                {
                   _id: nextId++, name: "Untitled item",
                   carbs: 0.0, fat: 0.0, protein: 0.0, kcal: 0.0
                }
             ]
          };
+
+      case "DELETE_ALL_ITEMS":
+         return {
+            ...state,
+            foodItems: []
+         };
+
       default:
          return state;
    }
